@@ -1,0 +1,17 @@
+def day1(listofIntegers,k):
+    for index in range(len(listofIntegers)):
+        for secondIndex in range(len(listofIntegers)):
+            total = listofIntegers[index] + listofIntegers[secondIndex]
+
+            if total == k:
+                return True
+
+
+
+listofIntegers = [15, 10, 3, 7]
+k = 17
+
+if day1(listofIntegers,k):
+    print("k exist.")
+else:
+    print("k does not exist.")
