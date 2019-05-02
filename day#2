@@ -1,0 +1,31 @@
+
+def recursive_multiplication(liste):
+    if len(liste) == 1:
+        return liste[0]
+    return recursive_multiplication([liste[0]])*recursive_multiplication(liste[1:]) #bu kısmı anlamadım
+
+
+def main(liste):
+    multp = recursive_multiplication(liste)
+    newliste = []
+    for i in liste:
+        newliste.append(multp/i)
+    return newliste
+
+liste = [1, 2, 3, 4, 5]
+
+print(main(liste))
+
+#what if you cant use divison?
+
+newArray=[]
+result=1
+for i in range(len(liste)):
+    remove = liste.pop(i)
+    for x in liste:
+        result = result*x
+    newArray.append(result)
+    liste.insert(i,remove)
+    result = 1
+
+print(newArray)
